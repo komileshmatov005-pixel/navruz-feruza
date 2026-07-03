@@ -50,7 +50,7 @@
                 <div class="card-border"></div>
                 <div id="bismillah" class="bismillah">Bismillahir Rohmanir Rohim</div>
                 <p id="sub-text" style="letter-spacing: 5px; color: #888; font-size: 0.8rem;">SIZNI TANTANAGA TAKLIF ETAMIZ</p>
-                <h1 class="names">Navruzjon & Feruzahon</h1>
+                <h1 id="names-title" class="names">Navruzjon & Feruzahon</h1>
                 <div id="inv-text" style="font-style: italic; line-height: 2; color: #444; margin: 30px 0;">"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo'y bo'lib kutib qolamiz."</div>
                 <button onclick="downloadICS()" class="btn btn-outline" id="save-btn">KALENDARGA SAQLASH</button>
             </div>
@@ -65,8 +65,8 @@
                 <img src="restoran.png" class="res-img" alt="Bisyor">
                 <h3 id="rest-name" style="color: var(--national-blue);">"Bisyor" TANTANALAR SAROYI</h3>
                 <p id="address-text" style="color: #888; margin-bottom: 30px;">Surxondaryo viloyati, Sho'rchi tumani</p>
-                <a href="#" class="btn btn-main">GOOGLE XARITA</a>
-                <a href="https://yandex.uz/maps/org/bisyor/86512411921/" target="_blank" class="btn btn-outline">YANDEX XARITA</a>
+                <a id="google-btn" href="#" target="_blank" class="btn btn-main">GOOGLE XARITA</a>
+                <a id="yandex-btn" href="https://yandex.uz/maps/org/bisyor/86512411921/" target="_blank" class="btn btn-outline">YANDEX XARITA</a>
             </div>
             <div class="timer-container" style="margin: 60px 0;">
                 <h4 id="timer-t" style="letter-spacing: 3px; color: #555;">TO'YGACHA QOLDI:</h4>
@@ -83,8 +83,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const translations = {
-            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", rest: '"Bisyor" TANTANALAR SAROYI', addr: "Surxondaryo viloyati, Sho'rchi tumani", footer: "Sizni kutib qolamiz!" },
-            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", rest: '"Бисьёр" ТАНТАНАЛАР САРОЙИ', addr: "Сурхондарё вилояти, Шўрчи тумани", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
+            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", names: "Navruzjon & Feruzahon", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", rest: '"Bisyor" TANTANALAR SAROYI', addr: "Surxondaryo viloyati, Sho'rchi tumani", google: "GOOGLE XARITA", yandex: "YANDEX XARITA", footer: "Sizni kutib qolamiz!" },
+            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", names: "Наврузжон & Ферузахон", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", rest: '"Бисьёр" ТАНТАНАЛАР САРОЙИ', addr: "Сурхондарё вилояти, Шўрчи тумани", google: "GOOGLE ХАРИТА", yandex: "YANDEX ХАРИТА", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
         };
         function changeLang(lang) {
             const t = translations[lang];
@@ -93,6 +93,7 @@
             document.getElementById('tap-text').innerText = t.tap;
             document.getElementById('bismillah').innerText = t.bismillah;
             document.getElementById('sub-text').innerText = t.sub;
+            document.getElementById('names-title').innerText = t.names;
             document.getElementById('tantana-label').innerText = t.tantana;
             document.getElementById('inv-text').innerText = t.inv;
             document.getElementById('save-btn').innerText = t.save;
@@ -102,6 +103,8 @@
             document.getElementById('l-m').innerText = t.m;
             document.getElementById('rest-name').innerText = t.rest;
             document.getElementById('address-text').innerText = t.addr;
+            document.getElementById('google-btn').innerText = t.google;
+            document.getElementById('yandex-btn').innerText = t.yandex;
             document.getElementById('footer-t').innerText = t.footer;
         }
         function openMe() {
@@ -132,4 +135,5 @@
     </script>
 </body>
 </html>
+
 
