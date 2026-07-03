@@ -27,8 +27,7 @@
         .btn { display: inline-block; width: 85%; max-width: 350px; margin: 15px auto; padding: 18px; text-decoration: none; font-weight: 600; cursor: pointer; border-radius: 50px; transition: 0.4s; font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
         .btn-main { background: linear-gradient(45deg, var(--gold-main), var(--gold-dark)); color: white; border: none; }
         .btn-outline { background: white; color: var(--national-blue); border: 2px solid var(--national-blue); }
-        .timer-container { margin: 60px 0; }
-        .timer-grid { display: flex; justify-content: center; gap: 15px; }
+        .timer-grid { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
         .t-item { background: white; color: var(--national-blue); padding: 20px 10px; min-width: 80px; border-radius: 10px; border: 2px solid var(--gold-light); }
         .t-item span { display: block; font-size: 2rem; font-weight: bold; font-family: 'Cinzel Decorative', serif; color: var(--gold-dark); }
         .res-img { width: 100%; max-width: 480px; border-radius: 5px; border: 8px solid white; box-shadow: 0 15px 50px rgba(0,0,0,0.1); margin-bottom: 30px; }
@@ -56,7 +55,8 @@
                 <button onclick="downloadICS()" class="btn btn-outline" id="save-btn">KALENDARGA SAQLASH</button>
             </div>
             <div class="premium-card" data-aos="fade-up">
-                <div class="card-bor                <div class="date-box">03 . 05 . 2026</div>
+                <div class="card-border"></div>
+                <div class="date-box">03 . 05 . 2026</div>
                 <div id="tantana-label" style="color: #555; text-transform: uppercase; font-size: 0.9rem; font-weight: 600;">TANTANA:</div>
                 <div class="time-value" style="color: var(--gold-dark); font-weight: bold; font-size: 2.5rem;">19:00 DA</div>
             </div>
@@ -65,10 +65,10 @@
                 <img src="restoran.png" class="res-img" alt="Bisyor">
                 <h3 id="rest-name" style="color: var(--national-blue);">"Bisyor" TANTANALAR SAROYI</h3>
                 <p id="address-text" style="color: #888; margin-bottom: 30px;">Surxondaryo viloyati, Sho'rchi tumani</p>
-                <a href="https://maps.app.goo.gl/msA3S6Jk8htE6a48A?g_st=ac" target="_blank" class="btn btn-main">GOOGLE XARITA</a>
+                <a href="#" class="btn btn-main">GOOGLE XARITA</a>
                 <a href="https://yandex.uz/maps/org/bisyor/86512411921/" target="_blank" class="btn btn-outline">YANDEX XARITA</a>
             </div>
-            <div class="timer-container">
+            <div class="timer-container" style="margin: 60px 0;">
                 <h4 id="timer-t" style="letter-spacing: 3px; color: #555;">TO'YGACHA QOLDI:</h4>
                 <div class="timer-grid">
                     <div class="t-item"><span id="d">00</span><small id="l-d">Kun</small></div>
@@ -77,20 +77,19 @@
                 </div>
             </div>
             <p id="footer-t" style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--gold-dark);">Sizni kutib qolamiz!</p>
-            <img src="pattern_footer.png" width="150" style="opacity: 0.3; margin-top: 20px;"> 
         </div>
     </div>
     <audio id="muzika" loop><source src="music.mp3" type="audio/mpeg"></audio>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const translations = {
-            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", footer: "Sizni kutib qolamiz!" },
-            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
+            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", rest: '"Bisyor" TANTANALAR SAROYI', addr: "Surxondaryo viloyati, Sho'rchi tumani", footer: "Sizni kutib qolamiz!" },
+            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", rest: '"Бисьёр" ТАНТАНАЛАР САРОЙИ', addr: "Сурхондарё вилояти, Шўрчи тумани", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
         };
         function changeLang(lang) {
             const t = translations[lang];
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            if(event) event.target.classList.add('active');
+            event.target.classList.add('active');
             document.getElementById('tap-text').innerText = t.tap;
             document.getElementById('bismillah').innerText = t.bismillah;
             document.getElementById('sub-text').innerText = t.sub;
@@ -101,6 +100,8 @@
             document.getElementById('l-d').innerText = t.d;
             document.getElementById('l-h').innerText = t.h;
             document.getElementById('l-m').innerText = t.m;
+            document.getElementById('rest-name').innerText = t.rest;
+            document.getElementById('address-text').innerText = t.addr;
             document.getElementById('footer-t').innerText = t.footer;
         }
         function openMe() {
@@ -111,7 +112,7 @@
             setInterval(updateTimer, 1000);
         }
         function updateTimer() {
-            const target = new Date("Iyul 12, 2026 19:00:00").getTime();
+            const target = new Date("May 03, 2026 19:00:00").getTime();
             const now = new Date().getTime();
             const diff = target - now;
             if (diff > 0) {
@@ -131,3 +132,4 @@
     </script>
 </body>
 </html>
+
