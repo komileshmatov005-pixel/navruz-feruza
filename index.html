@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navruzjon & Feruzahon - Tantana</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@300;400;600&family=Noto+Serif+Display:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Noto+Serif+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --national-blue: #007791; --gold-light: #f3e5ab; --gold-main: #d4af37; --gold-dark: #aa8822; --text-dark: #1a1a1a; --bg-light: #fffdf5; }
         body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background: var(--bg-light); overflow-x: hidden; scroll-behavior: smooth; color: var(--text-dark); }
         .main-wrapper { position: relative; min-height: 100vh; background-image: url('https://www.transparenttextures.com/patterns/az-subtle.png'); background-color: var(--bg-light); }
         #envelope { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--national-blue); display: flex; justify-content: center; align-items: center; z-index: 9999; transition: transform 1.8s cubic-bezier(0.85, 0, 0.15, 1); overflow: hidden; }
-        #envelope::before { content: ''; position: absolute; width: 200%; height: 200%; background-image: url('https://www.transparenttextures.com/patterns/arabesque.png'); opacity: 0.15; }
         .seal-container { text-align: center; cursor: pointer; position: relative; z-index: 2; animation: slowPulse 3s infinite ease-in-out; }
         .seal-container img { width: 150px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); border-radius: 50%; border: 4px solid var(--gold-main); }
-        .seal-container p { color: var(--gold-light); font-size: 14px; margin-top: 25px; letter-spacing: 5px; font-family: 'Noto Serif Display', serif; }
         .lang-switcher { position: fixed; top: 25px; right: 25px; z-index: 10001; background: rgba(255, 253, 245, 0.95); padding: 5px; border-radius: 30px; box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2); border: 2px solid var(--gold-main); backdrop-filter: blur(5px); }
         .lang-btn { border: none; background: none; padding: 10px 20px; cursor: pointer; font-weight: 600; font-size: 12px; border-radius: 25px; color: var(--national-blue); transition: 0.3s; }
         .lang-btn.active { background: var(--national-blue); color: var(--gold-light); }
@@ -22,15 +20,15 @@
         .premium-card { max-width: 550px; margin: 40px auto; background: white; padding: 50px 30px; border-radius: 10px; position: relative; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.05); border: 1px solid #f0e6cc; }
         .card-border { position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 2px solid var(--gold-main); pointer-events: none; border-radius: 5px; opacity: 0.6; }
         .bismillah { font-family: 'Noto Serif Display', serif; font-size: 1.3rem; color: var(--gold-dark); margin-bottom: 25px; }
-        .names { font-family: 'Great Vibes', cursive; font-size: 4.5rem; color: var(--national-blue); margin: 20px 0; }
-        .date-box { display: inline-flex; align-items: center; border-top: 3px solid var(--gold-main); border-bottom: 3px solid var(--gold-main); padding: 15px 40px; margin: 20px 0; font-family: 'Cinzel Decorative', serif; font-size: 1.8rem; font-weight: bold; }
+        .names { font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--national-blue); margin: 20px 0; font-weight: 700; text-transform: uppercase; }
+        .date-box { display: inline-flex; align-items: center; border-top: 3px solid var(--gold-main); border-bottom: 3px solid var(--gold-main); padding: 15px 40px; margin: 20px 0; font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: bold; }
         .btn { display: inline-block; width: 85%; max-width: 350px; margin: 15px auto; padding: 18px; text-decoration: none; font-weight: 600; cursor: pointer; border-radius: 50px; transition: 0.4s; font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
         .btn-main { background: linear-gradient(45deg, var(--gold-main), var(--gold-dark)); color: white; border: none; }
         .btn-outline { background: white; color: var(--national-blue); border: 2px solid var(--national-blue); }
         .timer-container { margin: 60px 0; }
         .timer-grid { display: flex; justify-content: center; gap: 15px; }
         .t-item { background: white; color: var(--national-blue); padding: 20px 10px; min-width: 80px; border-radius: 10px; border: 2px solid var(--gold-light); }
-        .t-item span { display: block; font-size: 2rem; font-weight: bold; font-family: 'Cinzel Decorative', serif; color: var(--gold-dark); }
+        .t-item span { display: block; font-size: 2rem; font-weight: bold; font-family: 'Cinzel', serif; color: var(--gold-dark); }
         .res-img { width: 100%; max-width: 480px; border-radius: 5px; border: 8px solid white; box-shadow: 0 15px 50px rgba(0,0,0,0.1); margin-bottom: 30px; }
         @keyframes slowPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
     </style>
@@ -42,7 +40,7 @@
     </div>
     <div id="envelope">
         <div class="seal-container" onclick="openMe()">
-            <img src="seal.png" alt="Muhr"> <p id="tap-text">OCHISH</p>
+            <img src="seal.png" alt="Muhr"> <p id="tap-text" style="color: white; margin-top: 25px;">OCHISH</p>
         </div>
     </div>
     <div id="content" class="main-wrapper">
@@ -64,7 +62,7 @@
             <div class="premium-card" data-aos="fade-up">
                 <div class="card-border"></div>
                 <img src="restoran.png" class="res-img" alt="Bisyor">
-                <h3 id="rest-name" style="color: var(--national-blue);">"BISYOR" TANTANALAR SAROYI</h3>
+                <h3 id="rest-name" style="color: var(--national-blue);">"Bisyor" TANTANALAR SAROYI</h3>
                 <p id="address-text" style="color: #888; margin-bottom: 30px;">Surxondaryo viloyati, Sho'rchi tumani</p>
                 <a id="google-btn" href="https://maps.app.goo.gl/msA3S6Jk8htE6a48A?g_st=ac" target="_blank" class="btn btn-main">GOOGLE XARITA</a>
                 <a id="yandex-btn" href="https://yandex.uz/maps/org/bisyor/86512411921/" target="_blank" class="btn btn-outline">YANDEX XARITA</a>
@@ -78,20 +76,19 @@
                 </div>
             </div>
             <p id="footer-t" style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--gold-dark);">Sizni kutib qolamiz!</p>
-            <img src="pattern_footer.png" width="150" style="opacity: 0.3; margin-top: 20px;"> 
         </div>
     </div>
     <audio id="muzika" loop><source src="music.mp3" type="audio/mpeg"></audio>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const translations = {
-            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", names: "Navruzjon & Feruzahon", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", rest: '"BISYOR" TANTANALAR SAROYI', addr: "Surxondaryo viloyati, Sho\'rchi tumani", google: "GOOGLE XARITA", yandex: "YANDEX XARITA", footer: "Sizni kutib qolamiz!" },
-            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", names: "Наврузжон & Ферузахон", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", rest: '"БИСЬЁР" ТАНТАНАЛАР САРОЙИ', addr: "Сурхондарё вилояти, Шўрчи тумани", google: "GOOGLE ХАРИТА", yandex: "YANDEX ХАРИТА", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
+            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", names: "Navruzjon & Feruzahon", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", rest: '"Bisyor" TANTANALAR SAROYI', addr: "Surxondaryo viloyati, Sho\'rchi tumani", google: "GOOGLE XARITA", yandex: "YANDEX XARITA", footer: "Sizni kutib qolamiz!" },
+            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", names: "Наврузжон & Ферузахон", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", rest: '"Бисьёр" ТАНТАНАЛАР САРОЙИ', addr: "Сурхондарё вилояти, Шўрчи тумани", google: "GOOGLE ХАРИТА", yandex: "YANDEX ХАРИТА", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
         };
         function changeLang(lang) {
             const t = translations[lang];
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            if(event) event.target.classList.add('active');
+            event.target.classList.add('active');
             document.getElementById('tap-text').innerText = t.tap;
             document.getElementById('bismillah').innerText = t.bismillah;
             document.getElementById('sub-text').innerText = t.sub;
@@ -109,13 +106,7 @@
             document.getElementById('yandex-btn').innerText = t.yandex;
             document.getElementById('footer-t').innerText = t.footer;
         }
-        function openMe() {
-            document.getElementById('envelope').style.transform = 'translateY(-100vh)';
-            document.getElementById('content').style.display = 'block';
-            setTimeout(() => { AOS.init({ duration: 1200, once: true }); }, 100);
-            document.getElementById('muzika').play().catch(e => console.log("Audio blocked"));
-            setInterval(updateTimer, 1000);
-        }
+        function openMe() { document.getElementById('envelope').style.transform = 'translateY(-100vh)'; document.getElementById('content').style.display = 'block'; setTimeout(() => { AOS.init({ duration: 1200, once: true }); }, 100); document.getElementById('muzika').play().catch(e => console.log("Audio")); setInterval(updateTimer, 1000); }
         function updateTimer() {
             const target = new Date("July 12, 2026 19:00:00").getTime();
             const now = new Date().getTime();
@@ -126,17 +117,13 @@
                 document.getElementById('m').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             }
         }
-        function downloadICS() {
-            const icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Navruzjon & Feruzahon - Tantana\nDTSTART:20260712T140000Z\nDTEND:20260712T180000Z\nLOCATION:Bisyor Tantanalar Saroyi, Sho'rchi \nEND:VEVENT\nEND:VCALENDAR";
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.setAttribute('download', 'taklifnoma_tantana.ics');
-            link.click();
-        }
+        function downloadICS() { const icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Navruzjon & Feruzahon - Tantana\nDTSTART:20260712T140000Z\nDTEND:20260712T180000Z\nLOCATION:Bisyor Tantanalar Saroyi, Sho'rchi\nEND:VEVENT\nEND:VCALENDAR"; const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' }); const link = document.createElement('a'); link.href = window.URL.createObjectURL(blob); link.setAttribute('download', 'taklifnoma.ics'); link.click(); }
     </script>
 </body>
 </html>
+
+
+
 
 
 
