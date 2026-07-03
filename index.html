@@ -27,7 +27,8 @@
         .btn { display: inline-block; width: 85%; max-width: 350px; margin: 15px auto; padding: 18px; text-decoration: none; font-weight: 600; cursor: pointer; border-radius: 50px; transition: 0.4s; font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
         .btn-main { background: linear-gradient(45deg, var(--gold-main), var(--gold-dark)); color: white; border: none; }
         .btn-outline { background: white; color: var(--national-blue); border: 2px solid var(--national-blue); }
-        .timer-grid { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .timer-container { margin: 60px 0; }
+        .timer-grid { display: flex; justify-content: center; gap: 15px; }
         .t-item { background: white; color: var(--national-blue); padding: 20px 10px; min-width: 80px; border-radius: 10px; border: 2px solid var(--gold-light); }
         .t-item span { display: block; font-size: 2rem; font-weight: bold; font-family: 'Cinzel Decorative', serif; color: var(--gold-dark); }
         .res-img { width: 100%; max-width: 480px; border-radius: 5px; border: 8px solid white; box-shadow: 0 15px 50px rgba(0,0,0,0.1); margin-bottom: 30px; }
@@ -50,25 +51,25 @@
                 <div class="card-border"></div>
                 <div id="bismillah" class="bismillah">Bismillahir Rohmanir Rohim</div>
                 <p id="sub-text" style="letter-spacing: 5px; color: #888; font-size: 0.8rem;">SIZNI TANTANAGA TAKLIF ETAMIZ</p>
-                <h1 id="names-title" class="names">Navruzjon & Feruzahon</h1>
+                <h1 id="names" class="names">Navruzjon & Feruzahon</h1>
                 <div id="inv-text" style="font-style: italic; line-height: 2; color: #444; margin: 30px 0;">"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo'y bo'lib kutib qolamiz."</div>
                 <button onclick="downloadICS()" class="btn btn-outline" id="save-btn">KALENDARGA SAQLASH</button>
             </div>
             <div class="premium-card" data-aos="fade-up">
                 <div class="card-border"></div>
-                <div class="date-box">03 . 05 . 2026</div>
+                <div class="date-box">12 . 07 . 2026</div>
                 <div id="tantana-label" style="color: #555; text-transform: uppercase; font-size: 0.9rem; font-weight: 600;">TANTANA:</div>
                 <div class="time-value" style="color: var(--gold-dark); font-weight: bold; font-size: 2.5rem;">19:00 DA</div>
             </div>
             <div class="premium-card" data-aos="fade-up">
                 <div class="card-border"></div>
                 <img src="restoran.png" class="res-img" alt="Bisyor">
-                <h3 id="rest-name" style="color: var(--national-blue);">"Bisyor" TANTANALAR SAROYI</h3>
+                <h3 id="rest-name" style="color: var(--national-blue);">"BISYOR" TANTANALAR SAROYI</h3>
                 <p id="address-text" style="color: #888; margin-bottom: 30px;">Surxondaryo viloyati, Sho'rchi tumani</p>
-                <a id="google-btn" href="#" target="_blank" class="btn btn-main">GOOGLE XARITA</a>
+                <a id="google-btn" href="https://maps.app.goo.gl/msA3S6Jk8htE6a48A?g_st=ac" target="_blank" class="btn btn-main">GOOGLE XARITA</a>
                 <a id="yandex-btn" href="https://yandex.uz/maps/org/bisyor/86512411921/" target="_blank" class="btn btn-outline">YANDEX XARITA</a>
             </div>
-            <div class="timer-container" style="margin: 60px 0;">
+            <div class="timer-container">
                 <h4 id="timer-t" style="letter-spacing: 3px; color: #555;">TO'YGACHA QOLDI:</h4>
                 <div class="timer-grid">
                     <div class="t-item"><span id="d">00</span><small id="l-d">Kun</small></div>
@@ -77,23 +78,24 @@
                 </div>
             </div>
             <p id="footer-t" style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--gold-dark);">Sizni kutib qolamiz!</p>
+            <img src="pattern_footer.png" width="150" style="opacity: 0.3; margin-top: 20px;"> 
         </div>
     </div>
     <audio id="muzika" loop><source src="music.mp3" type="audio/mpeg"></audio>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const translations = {
-            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", names: "Navruzjon & Feruzahon", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", rest: '"Bisyor" TANTANALAR SAROYI', addr: "Surxondaryo viloyati, Sho'rchi tumani", google: "GOOGLE XARITA", yandex: "YANDEX XARITA", footer: "Sizni kutib qolamiz!" },
-            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", names: "Наврузжон & Ферузахон", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", rest: '"Бисьёр" ТАНТАНАЛАР САРОЙИ', addr: "Сурхондарё вилояти, Шўрчи тумани", google: "GOOGLE ХАРИТА", yandex: "YANDEX ХАРИТА", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
+            uz: { tap: "OCHISH", bismillah: "Bismillahir Rohmanir Rohim", sub: "SIZNI TANTANAGA TAKLIF ETAMIZ", names: "Navruzjon & Feruzahon", tantana: "TANTANA:", inv: '"Alloh taolo qalbimizga solgan muhabbat rishtasini nikoh bilan bog\'lashga ahd qildik. Quvonchli kunimizda siz azizlarni duogo\'y bo\'lib kutib qolamiz."', save: "KALENDARGA SAQLASH", timer: "TO'YGACHA QOLDI:", d: "Kun", h: "Soat", m: "Min", rest: '"Bisyor" TANTANALAR SAROYI', addr: "Surxondaryo viloyati, Sho\'rchi tumani", google: "GOOGLE XARITA", yandex: "YANDEX XARITA", footer: "Sizni kutib qolamiz!" },
+            cyrillic: { tap: "ОЧИШ", bismillah: "Бисмиллаҳир Роҳманир Роҳийм", sub: "СИЗНИ ТАНТАНАГА ТАКЛИФ ЭТАМИЗ", names: "Наврузжон & Ферузахон", tantana: "ТАНТАНА:", inv: '"Аллоҳ таоло қалбимизга солган муҳаббат риштасини никоҳ билан боғлашга аҳд қилдик. Қувончли кунимизда сиз азизларни дуогўй бўлиб кутиб қоламиз."', save: "КАЛЕНДАРГА САҚЛАШ", timer: "ТЎЙГАЧА ҚОЛДИ:", d: "Кун", h: "Соат", m: "Мин", rest: '"БИСЬЁР" ТАНТАНАЛАР САРОЙИ', addr: "Сурхондарё вилояти, Шўрчи тумани", google: "GOOGLE ХАРИТА", yandex: "YANDEX ХАРИТА", footer: "СИЗНИ КУТИБ ҚОЛАМИЗ!" }
         };
         function changeLang(lang) {
             const t = translations[lang];
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
+            if(event) event.target.classList.add('active');
             document.getElementById('tap-text').innerText = t.tap;
             document.getElementById('bismillah').innerText = t.bismillah;
             document.getElementById('sub-text').innerText = t.sub;
-            document.getElementById('names-title').innerText = t.names;
+            document.getElementById('names').innerText = t.names;
             document.getElementById('tantana-label').innerText = t.tantana;
             document.getElementById('inv-text').innerText = t.inv;
             document.getElementById('save-btn').innerText = t.save;
